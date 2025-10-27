@@ -30,8 +30,8 @@
         {
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(telaTecnico));
             panel1 = new Panel();
+            button1 = new Button();
             comboBox1 = new ComboBox();
-            linkLabel1 = new LinkLabel();
             pictureBox1 = new PictureBox();
             checkBox2 = new CheckBox();
             checkBox1 = new CheckBox();
@@ -42,8 +42,8 @@
             // panel1
             // 
             panel1.BackColor = Color.White;
+            panel1.Controls.Add(button1);
             panel1.Controls.Add(comboBox1);
-            panel1.Controls.Add(linkLabel1);
             panel1.Controls.Add(pictureBox1);
             panel1.Controls.Add(checkBox2);
             panel1.Controls.Add(checkBox1);
@@ -53,6 +53,17 @@
             panel1.TabIndex = 2;
             panel1.Paint += panel1_Paint;
             // 
+            // button1
+            // 
+            button1.Location = new Point(58, 332);
+            button1.Name = "button1";
+            button1.Size = new Size(129, 23);
+            button1.TabIndex = 6;
+            button1.Text = "Download do Driver";
+            button1.UseVisualStyleBackColor = true;
+            button1.Visible = false;
+            button1.Click += button1_Click;
+            // 
             // comboBox1
             // 
             comboBox1.FormattingEnabled = true;
@@ -61,16 +72,6 @@
             comboBox1.Size = new Size(296, 23);
             comboBox1.TabIndex = 5;
             comboBox1.SelectedIndexChanged += comboBox1_SelectedIndexChanged;
-            // 
-            // linkLabel1
-            // 
-            linkLabel1.AutoSize = true;
-            linkLabel1.Location = new Point(56, 321);
-            linkLabel1.Name = "linkLabel1";
-            linkLabel1.Size = new Size(60, 15);
-            linkLabel1.TabIndex = 4;
-            linkLabel1.TabStop = true;
-            linkLabel1.Text = "linkLabel1";
             // 
             // pictureBox1
             // 
@@ -128,7 +129,7 @@
         private CheckBox checkBox2;
         private CheckBox checkBox1;
         private PictureBox pictureBox1;
-        private LinkLabel linkLabel1;
         private ComboBox comboBox1;
+        private Button button1;
     }
 }

@@ -19,13 +19,12 @@ namespace EtiquetaFOR
             // 1️ Esconder os controles ao iniciar
             comboBox1.Visible = false;
             pictureBox1.Visible = false;
-            linkLabel1.Visible = false;
+            
 
             // 2️ Limpar valores
             comboBox1.SelectedIndex = -1;
             pictureBox1.Image = null;
-            linkLabel1.Text = "";
-            linkLabel1.Tag = null;
+            
             CarregarImpressoras();
         }
         public class ImpressoraInfo
@@ -43,17 +42,21 @@ namespace EtiquetaFOR
 
         private void checkBox2_CheckedChanged(object sender, EventArgs e)
         {
-            if (checkBox2.Checked) { 
-            checkBox1.Checked = false;
-            comboBox1.Visible = true;
-            pictureBox1.Visible = true;
-            linkLabel1.Visible = true; }
+            if (checkBox2.Checked)
+            {
+                checkBox1.Checked = false;
+                comboBox1.Visible = true;
+                pictureBox1.Visible = true;
+               
+                button1.Visible = true;
+            }
             else
             {
                 // Esconder controles
                 comboBox1.Visible = false;
                 pictureBox1.Visible = false;
-                linkLabel1.Visible = false;
+               
+                button1.Visible = false;
             }
 
         }
@@ -80,14 +83,14 @@ namespace EtiquetaFOR
             {
                 Nome = "HP LaserJet 1020",
                 ImagemPath = @"C:\Users\alex.augusto\source\repos\EtiquetaFOR\EtiquetaFOR\Impressoras\Teste1.png",
-                DriverLink = "https://support.hp.com/br-pt/drivers"
+                DriverLink = "https://www.youtube.com.br"
             });
 
             impressoras.Add(new ImpressoraInfo
             {
                 Nome = "Epson L3150",
                 ImagemPath = @"C:\Users\alex.augusto\source\repos\EtiquetaFOR\EtiquetaFOR\Impressoras\Teste2.png",
-                DriverLink = "https://www.epson.com.br/drivers"
+                DriverLink = "https://www.google.com.br"
             });
 
             // Preenche ComboBox
@@ -100,17 +103,7 @@ namespace EtiquetaFOR
             if (comboBox1.Items.Count > 0)
                 comboBox1.SelectedIndex = 0; // seleciona a primeira por padrão
         }
-        private void linkLabel1_LinkClicked(object sender, LinkLabelLinkClickedEventArgs e)
-        {
-            if (linkLabel1.Tag != null)
-            {
-                System.Diagnostics.Process.Start(new System.Diagnostics.ProcessStartInfo
-                {
-                    FileName = linkLabel1.Tag.ToString(),
-                    UseShellExecute = true
-                });
-            }
-        }
+        
         private void comboBox1_SelectedIndexChanged(object sender, EventArgs e)
         {
             if (comboBox1.SelectedItem == null) return;
@@ -125,10 +118,27 @@ namespace EtiquetaFOR
                     pictureBox1.Image = Image.FromFile(info.ImagemPath);
                 else
                     pictureBox1.Image = null;
+                                
+                button1.Tag = info.DriverLink;
+            }
+        }
 
-                // Atualiza link do driver
-                linkLabel1.Text = "Download do driver";
-                linkLabel1.Tag = info.DriverLink;
+        private void button1_Click(object sender, EventArgs e)
+        {
+            if (button1.Tag is string url && !string.IsNullOrWhiteSpace(url))
+            {
+                try
+                {
+                    System.Diagnostics.Process.Start(new System.Diagnostics.ProcessStartInfo
+                    {
+                        FileName = url,
+                        UseShellExecute = true
+                    });
+                }
+                catch (Exception ex)
+                {
+                    MessageBox.Show($"Não foi possível abrir o link:\n{ex.Message}", "Erro", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                }
             }
         }
     }
