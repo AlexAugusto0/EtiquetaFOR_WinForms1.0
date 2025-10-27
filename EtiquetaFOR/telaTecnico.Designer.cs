@@ -30,16 +30,21 @@
         {
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(telaTecnico));
             panel1 = new Panel();
+            comboBox1 = new ComboBox();
+            linkLabel1 = new LinkLabel();
+            pictureBox1 = new PictureBox();
             checkBox2 = new CheckBox();
             checkBox1 = new CheckBox();
-            checkBox3 = new CheckBox();
             panel1.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)pictureBox1).BeginInit();
             SuspendLayout();
             // 
             // panel1
             // 
             panel1.BackColor = Color.White;
-            panel1.Controls.Add(checkBox3);
+            panel1.Controls.Add(comboBox1);
+            panel1.Controls.Add(linkLabel1);
+            panel1.Controls.Add(pictureBox1);
             panel1.Controls.Add(checkBox2);
             panel1.Controls.Add(checkBox1);
             panel1.Location = new Point(33, 32);
@@ -47,6 +52,34 @@
             panel1.Size = new Size(615, 387);
             panel1.TabIndex = 2;
             panel1.Paint += panel1_Paint;
+            // 
+            // comboBox1
+            // 
+            comboBox1.FormattingEnabled = true;
+            comboBox1.Location = new Point(67, 99);
+            comboBox1.Name = "comboBox1";
+            comboBox1.Size = new Size(296, 23);
+            comboBox1.TabIndex = 5;
+            comboBox1.SelectedIndexChanged += comboBox1_SelectedIndexChanged;
+            // 
+            // linkLabel1
+            // 
+            linkLabel1.AutoSize = true;
+            linkLabel1.Location = new Point(56, 321);
+            linkLabel1.Name = "linkLabel1";
+            linkLabel1.Size = new Size(60, 15);
+            linkLabel1.TabIndex = 4;
+            linkLabel1.TabStop = true;
+            linkLabel1.Text = "linkLabel1";
+            // 
+            // pictureBox1
+            // 
+            pictureBox1.Location = new Point(58, 159);
+            pictureBox1.Name = "pictureBox1";
+            pictureBox1.Size = new Size(313, 132);
+            pictureBox1.SizeMode = PictureBoxSizeMode.Zoom;
+            pictureBox1.TabIndex = 3;
+            pictureBox1.TabStop = false;
             // 
             // checkBox2
             // 
@@ -70,17 +103,6 @@
             checkBox1.UseVisualStyleBackColor = true;
             checkBox1.CheckedChanged += checkBox1_CheckedChanged;
             // 
-            // checkBox3
-            // 
-            checkBox3.AutoSize = true;
-            checkBox3.Location = new Point(400, 193);
-            checkBox3.Name = "checkBox3";
-            checkBox3.Size = new Size(110, 19);
-            checkBox3.TabIndex = 2;
-            checkBox3.Text = "CheckBoxTESTE";
-            checkBox3.UseVisualStyleBackColor = true;
-            checkBox3.CheckedChanged += checkBox3_CheckedChanged;
-            // 
             // telaTecnico
             // 
             AutoScaleDimensions = new SizeF(7F, 15F);
@@ -96,6 +118,7 @@
             Load += telaTecnico_Load;
             panel1.ResumeLayout(false);
             panel1.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)pictureBox1).EndInit();
             ResumeLayout(false);
         }
 
@@ -104,6 +127,8 @@
         private Panel panel1;
         private CheckBox checkBox2;
         private CheckBox checkBox1;
-        private CheckBox checkBox3;
+        private PictureBox pictureBox1;
+        private LinkLabel linkLabel1;
+        private ComboBox comboBox1;
     }
 }
