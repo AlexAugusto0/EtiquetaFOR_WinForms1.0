@@ -73,6 +73,16 @@ namespace EtiquetaFOR.Properties {
         /// <summary>
         ///   Consulta um recurso localizado do tipo System.Drawing.Bitmap.
         /// </summary>
+        internal static System.Drawing.Bitmap EtiquetaFOR {
+            get {
+                object obj = ResourceManager.GetObject("EtiquetaFOR", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Consulta um recurso localizado do tipo System.Drawing.Bitmap.
+        /// </summary>
         internal static System.Drawing.Bitmap icone {
             get {
                 object obj = ResourceManager.GetObject("icone", resourceCulture);
@@ -96,6 +106,16 @@ namespace EtiquetaFOR.Properties {
         internal static System.Drawing.Bitmap olho_senha {
             get {
                 object obj = ResourceManager.GetObject("olho_senha", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Consulta um recurso localizado do tipo System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap SoftcomTecnologia {
+            get {
+                object obj = ResourceManager.GetObject("SoftcomTecnologia", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }
