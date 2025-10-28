@@ -31,12 +31,14 @@
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Main));
             pictureBox1 = new PictureBox();
             pictureBox2 = new PictureBox();
-            usuarioBox = new TextBox();
             senhaBox = new TextBox();
             Usuario = new Label();
             Senha = new Label();
             pictureBox3 = new PictureBox();
             pictureBox4 = new PictureBox();
+            btnLogar = new Button();
+            btnFechar = new Button();
+            usuarioBox = new ComboBox();
             ((System.ComponentModel.ISupportInitialize)pictureBox1).BeginInit();
             ((System.ComponentModel.ISupportInitialize)pictureBox2).BeginInit();
             ((System.ComponentModel.ISupportInitialize)pictureBox3).BeginInit();
@@ -64,19 +66,12 @@
             pictureBox2.TabStop = false;
             pictureBox2.Click += pictureBox2_Click;
             // 
-            // usuarioBox
-            // 
-            usuarioBox.Location = new Point(308, 246);
-            usuarioBox.Name = "usuarioBox";
-            usuarioBox.Size = new Size(207, 23);
-            usuarioBox.TabIndex = 2;
-            // 
             // senhaBox
             // 
             senhaBox.Location = new Point(308, 294);
             senhaBox.Name = "senhaBox";
             senhaBox.Size = new Size(207, 23);
-            senhaBox.TabIndex = 3;
+            senhaBox.TabIndex = 1;
             senhaBox.TextChanged += senhaBox_TextChanged;
             // 
             // Usuario
@@ -119,24 +114,60 @@
             pictureBox4.TabIndex = 7;
             pictureBox4.TabStop = false;
             // 
+            // btnLogar
+            // 
+            btnLogar.Cursor = Cursors.Hand;
+            btnLogar.Location = new Point(440, 356);
+            btnLogar.Name = "btnLogar";
+            btnLogar.Size = new Size(75, 23);
+            btnLogar.TabIndex = 3;
+            btnLogar.Text = "Logar";
+            btnLogar.UseVisualStyleBackColor = true;
+            btnLogar.Click += btnLogar_Click;
+            // 
+            // btnFechar
+            // 
+            btnFechar.Cursor = Cursors.Hand;
+            btnFechar.Location = new Point(308, 356);
+            btnFechar.Name = "btnFechar";
+            btnFechar.Size = new Size(75, 23);
+            btnFechar.TabIndex = 4;
+            btnFechar.Text = "Fechar";
+            btnFechar.UseVisualStyleBackColor = true;
+            btnFechar.Click += btnFechar_Click;
+            // 
+            // usuarioBox
+            // 
+            usuarioBox.FormattingEnabled = true;
+            usuarioBox.Location = new Point(308, 241);
+            usuarioBox.Name = "usuarioBox";
+            usuarioBox.Size = new Size(207, 23);
+            usuarioBox.TabIndex = 0;
+            usuarioBox.SelectedIndexChanged += usuarioBox_SelectedIndexChanged;
+            // 
             // Main
             // 
             AutoScaleDimensions = new SizeF(7F, 15F);
             AutoScaleMode = AutoScaleMode.Font;
             BackColor = SystemColors.ControlText;
             ClientSize = new Size(752, 434);
+            Controls.Add(usuarioBox);
+            Controls.Add(btnFechar);
+            Controls.Add(btnLogar);
             Controls.Add(pictureBox4);
             Controls.Add(pictureBox3);
             Controls.Add(Senha);
             Controls.Add(Usuario);
             Controls.Add(senhaBox);
-            Controls.Add(usuarioBox);
             Controls.Add(pictureBox2);
             Controls.Add(pictureBox1);
             Icon = (Icon)resources.GetObject("$this.Icon");
+            KeyPreview = true;
             Name = "Main";
             StartPosition = FormStartPosition.CenterScreen;
             Text = "EtiquetaFOR - v1.0";
+            Load += Main_Load;
+            KeyDown += Main_KeyDown;
             ((System.ComponentModel.ISupportInitialize)pictureBox1).EndInit();
             ((System.ComponentModel.ISupportInitialize)pictureBox2).EndInit();
             ((System.ComponentModel.ISupportInitialize)pictureBox3).EndInit();
@@ -149,11 +180,13 @@
 
         private PictureBox pictureBox1;
         private PictureBox pictureBox2;
-        private TextBox usuarioBox;
         private TextBox senhaBox;
         private Label Usuario;
         private Label Senha;
         private PictureBox pictureBox3;
         private PictureBox pictureBox4;
+        private Button btnLogar;
+        private Button btnFechar;
+        private ComboBox usuarioBox;
     }
 }

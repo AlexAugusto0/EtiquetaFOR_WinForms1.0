@@ -1,14 +1,15 @@
-﻿using System;
+﻿using Microsoft.Data.SqlClient;
+using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
 using System.Drawing;
 using System.Linq;
 using System.Text;
-using System.Threading.Tasks;
 using System.Text.Json;
+using System.Threading.Tasks;
 using System.Windows.Forms;
-using Microsoft.Data.SqlClient;
+using static EtiquetaFOR.Main;
 
 namespace EtiquetaFOR
 {
@@ -18,6 +19,7 @@ namespace EtiquetaFOR
         {
             InitializeComponent();
             CarregarConfiguracao();
+            this.Text = AppInfo.GetTituloAplicacao();
         }
 
         private void textBox2_TextChanged(object sender, EventArgs e)

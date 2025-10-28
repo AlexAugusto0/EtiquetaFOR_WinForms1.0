@@ -30,21 +30,21 @@
         {
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(telaTecnico));
             panel1 = new Panel();
+            panel2 = new Panel();
             button1 = new Button();
             comboBox1 = new ComboBox();
             pictureBox1 = new PictureBox();
             checkBox2 = new CheckBox();
             checkBox1 = new CheckBox();
             panel1.SuspendLayout();
+            panel2.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)pictureBox1).BeginInit();
             SuspendLayout();
             // 
             // panel1
             // 
             panel1.BackColor = Color.White;
-            panel1.Controls.Add(button1);
-            panel1.Controls.Add(comboBox1);
-            panel1.Controls.Add(pictureBox1);
+            panel1.Controls.Add(panel2);
             panel1.Controls.Add(checkBox2);
             panel1.Controls.Add(checkBox1);
             panel1.Location = new Point(33, 32);
@@ -53,9 +53,21 @@
             panel1.TabIndex = 2;
             panel1.Paint += panel1_Paint;
             // 
+            // panel2
+            // 
+            panel2.BackColor = Color.DarkGray;
+            panel2.Controls.Add(button1);
+            panel2.Controls.Add(comboBox1);
+            panel2.Controls.Add(pictureBox1);
+            panel2.Location = new Point(29, 47);
+            panel2.Name = "panel2";
+            panel2.Size = new Size(365, 317);
+            panel2.TabIndex = 7;
+            panel2.Paint += panel2_Paint;
+            // 
             // button1
             // 
-            button1.Location = new Point(58, 332);
+            button1.Location = new Point(29, 284);
             button1.Name = "button1";
             button1.Size = new Size(129, 23);
             button1.TabIndex = 6;
@@ -67,20 +79,21 @@
             // comboBox1
             // 
             comboBox1.FormattingEnabled = true;
-            comboBox1.Location = new Point(67, 99);
+            comboBox1.Location = new Point(29, 20);
             comboBox1.Name = "comboBox1";
-            comboBox1.Size = new Size(296, 23);
+            comboBox1.Size = new Size(313, 23);
             comboBox1.TabIndex = 5;
             comboBox1.SelectedIndexChanged += comboBox1_SelectedIndexChanged;
             // 
             // pictureBox1
             // 
-            pictureBox1.Location = new Point(58, 159);
+            pictureBox1.Location = new Point(29, 65);
             pictureBox1.Name = "pictureBox1";
-            pictureBox1.Size = new Size(313, 132);
+            pictureBox1.Size = new Size(313, 198);
             pictureBox1.SizeMode = PictureBoxSizeMode.Zoom;
             pictureBox1.TabIndex = 3;
             pictureBox1.TabStop = false;
+            pictureBox1.Click += pictureBox1_Click;
             // 
             // checkBox2
             // 
@@ -119,6 +132,7 @@
             Load += telaTecnico_Load;
             panel1.ResumeLayout(false);
             panel1.PerformLayout();
+            panel2.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)pictureBox1).EndInit();
             ResumeLayout(false);
         }
@@ -131,5 +145,6 @@
         private PictureBox pictureBox1;
         private ComboBox comboBox1;
         private Button button1;
+        private Panel panel2;
     }
 }
