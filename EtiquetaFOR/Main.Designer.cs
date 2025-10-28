@@ -39,10 +39,12 @@
             btnLogar = new Button();
             btnFechar = new Button();
             usuarioBox = new ComboBox();
+            pictureBox5 = new PictureBox();
             ((System.ComponentModel.ISupportInitialize)pictureBox1).BeginInit();
             ((System.ComponentModel.ISupportInitialize)pictureBox2).BeginInit();
             ((System.ComponentModel.ISupportInitialize)pictureBox3).BeginInit();
             ((System.ComponentModel.ISupportInitialize)pictureBox4).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)pictureBox5).BeginInit();
             SuspendLayout();
             // 
             // pictureBox1
@@ -58,7 +60,7 @@
             // 
             pictureBox2.Cursor = Cursors.Hand;
             pictureBox2.Image = Properties.Resources.ChatGPT_Image_24_de_out__de_2025__09_11_06;
-            pictureBox2.Location = new Point(685, 386);
+            pictureBox2.Location = new Point(24, 12);
             pictureBox2.Name = "pictureBox2";
             pictureBox2.Size = new Size(56, 44);
             pictureBox2.SizeMode = PictureBoxSizeMode.Zoom;
@@ -68,7 +70,7 @@
             // 
             // senhaBox
             // 
-            senhaBox.Location = new Point(308, 294);
+            senhaBox.Location = new Point(190, 290);
             senhaBox.Name = "senhaBox";
             senhaBox.Size = new Size(207, 23);
             senhaBox.TabIndex = 1;
@@ -78,7 +80,7 @@
             // 
             Usuario.AutoSize = true;
             Usuario.ForeColor = Color.White;
-            Usuario.Location = new Point(213, 249);
+            Usuario.Location = new Point(95, 245);
             Usuario.Name = "Usuario";
             Usuario.Size = new Size(50, 15);
             Usuario.TabIndex = 4;
@@ -88,7 +90,7 @@
             // 
             Senha.AutoSize = true;
             Senha.ForeColor = Color.White;
-            Senha.Location = new Point(213, 302);
+            Senha.Location = new Point(95, 298);
             Senha.Name = "Senha";
             Senha.Size = new Size(42, 15);
             Senha.TabIndex = 5;
@@ -117,9 +119,9 @@
             // btnLogar
             // 
             btnLogar.Cursor = Cursors.Hand;
-            btnLogar.Location = new Point(440, 356);
+            btnLogar.Location = new Point(309, 345);
             btnLogar.Name = "btnLogar";
-            btnLogar.Size = new Size(75, 23);
+            btnLogar.Size = new Size(88, 23);
             btnLogar.TabIndex = 3;
             btnLogar.Text = "Logar";
             btnLogar.UseVisualStyleBackColor = true;
@@ -128,9 +130,9 @@
             // btnFechar
             // 
             btnFechar.Cursor = Cursors.Hand;
-            btnFechar.Location = new Point(308, 356);
+            btnFechar.Location = new Point(190, 345);
             btnFechar.Name = "btnFechar";
-            btnFechar.Size = new Size(75, 23);
+            btnFechar.Size = new Size(90, 23);
             btnFechar.TabIndex = 4;
             btnFechar.Text = "Fechar";
             btnFechar.UseVisualStyleBackColor = true;
@@ -139,11 +141,21 @@
             // usuarioBox
             // 
             usuarioBox.FormattingEnabled = true;
-            usuarioBox.Location = new Point(308, 241);
+            usuarioBox.Location = new Point(190, 237);
             usuarioBox.Name = "usuarioBox";
             usuarioBox.Size = new Size(207, 23);
             usuarioBox.TabIndex = 0;
             usuarioBox.SelectedIndexChanged += usuarioBox_SelectedIndexChanged;
+            // 
+            // pictureBox5
+            // 
+            pictureBox5.Image = Properties.Resources.LogoIMG;
+            pictureBox5.Location = new Point(443, 129);
+            pictureBox5.Name = "pictureBox5";
+            pictureBox5.Size = new Size(341, 322);
+            pictureBox5.SizeMode = PictureBoxSizeMode.Zoom;
+            pictureBox5.TabIndex = 8;
+            pictureBox5.TabStop = false;
             // 
             // Main
             // 
@@ -161,6 +173,7 @@
             Controls.Add(senhaBox);
             Controls.Add(pictureBox2);
             Controls.Add(pictureBox1);
+            Controls.Add(pictureBox5);
             Icon = (Icon)resources.GetObject("$this.Icon");
             KeyPreview = true;
             Name = "Main";
@@ -172,6 +185,7 @@
             ((System.ComponentModel.ISupportInitialize)pictureBox2).EndInit();
             ((System.ComponentModel.ISupportInitialize)pictureBox3).EndInit();
             ((System.ComponentModel.ISupportInitialize)pictureBox4).EndInit();
+            ((System.ComponentModel.ISupportInitialize)pictureBox5).EndInit();
             ResumeLayout(false);
             PerformLayout();
         }
@@ -188,5 +202,6 @@
         private Button btnLogar;
         private Button btnFechar;
         private ComboBox usuarioBox;
+        private PictureBox pictureBox5;
     }
 }

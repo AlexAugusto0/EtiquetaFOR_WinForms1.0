@@ -103,6 +103,16 @@ namespace EtiquetaFOR.Properties {
         /// <summary>
         ///   Consulta um recurso localizado do tipo System.Drawing.Bitmap.
         /// </summary>
+        internal static System.Drawing.Bitmap LogoIMG {
+            get {
+                object obj = ResourceManager.GetObject("LogoIMG", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Consulta um recurso localizado do tipo System.Drawing.Bitmap.
+        /// </summary>
         internal static System.Drawing.Bitmap olho_senha {
             get {
                 object obj = ResourceManager.GetObject("olho_senha", resourceCulture);
